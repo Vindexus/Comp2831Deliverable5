@@ -1,0 +1,16 @@
+.order-summary {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, min-content));
+	width: 100%;
+}
+
+.order-summary > div {
+	white-space: nowrap;
+	padding: 0.5rem;
+}
+
+.order-summary > div.notes {
+	grid-column: 1 / span 4;
+	padding-top: 0;
+	padding-bottom: 0.5em;
+}

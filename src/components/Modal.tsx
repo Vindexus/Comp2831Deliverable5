@@ -2,7 +2,7 @@ import {ReactNode} from "react";
 
 export type ModalProps = {
 	body: ReactNode
-	buttons?: ReactNode
+	buttons?: string[] | ReactNode
 	button?: string
 	show?: boolean
 	title?: string
@@ -18,7 +18,11 @@ export default function Modal(props: ModalProps) {
 		buttons = <button className={'btn btn-primary'}>{props.button}</button>
 	}
 	else if (props.buttons) {
-		buttons = props.buttons
+		if (props.buttons instanceof Array && typeof props.buttons[0] === 'string') {
+			buttons = props.buttons.map((txt, i) => {
+				return <button type={'button'} className={'btn btn-' + (i === 0 ? 'primary' : 'secondary')} key={i}>{txt}</button>
+			})
+		}
 	}
 
 	function closeModal () {

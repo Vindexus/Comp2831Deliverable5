@@ -13,8 +13,9 @@ export default function Home () {
 				<button type={'button'} className={'btn btn-secondary'}>Go</button>
 			</div>
 		</div>
-		<div>
+		<div className={'d-flex gap-2 flex-wrap'}>
 			<Link to={'/register'}>Register new user</Link>
+			<Link to={'/new-order'}>New order</Link>
 		</div>
 	</div>
 }
