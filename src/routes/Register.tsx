@@ -6,7 +6,7 @@ import Form from "../components/forms/Form";
 import Modal from "../components/Modal";
 
 export default function Register () {
-	const [showModal, setShowModal] = useState(false)
+	const [showModal, setShowModal] = useState(true)
 	useSetBreadcrumbs(['New Customer'])
 
 	return <div className={''}>

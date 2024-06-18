@@ -1,0 +1,19 @@
+.home-go {
+	background: #C4C4C4;
+}
+
+.reports-container {
+	background: #F7F7F7;
+}
+
+.reports {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reports svg {
+	width: 28px;
+	height: 28px;
+	margin-left: -2px;
+	margin-bottom: 5px;
+}

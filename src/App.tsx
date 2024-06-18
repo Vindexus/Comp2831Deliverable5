@@ -6,6 +6,7 @@ import Home from "./routes/Home";
 import Register from "./routes/Register";
 import OrderNew from "./routes/OrderNew";
 import OrderConfirm from "./routes/OrderConfirm";
+import LoginPage from "./routes/Login";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
 			},
 		]
 	},
+	{
+		path: '/login',
+		element: <LoginPage />
+	}
 ]);
 function App() {
 	return <RouterProvider router={router} />

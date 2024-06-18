@@ -1,6 +1,7 @@
 import React, {ReactNode, useEffect} from "react";
 import {useAppStore} from "../lib/store";
 import Pagination from "../components/Pagination";
+import {pppSection} from "../lib/css";
 
 function Section ({section}: {section: Section}) {
 	const {title, enabled, discount, changed, children} = section
@@ -93,7 +94,7 @@ export default function CustomerDiscountSettings () {
 	})
 
 	return (
-		<div>
+		<div className={pppSection}>
 			<h1>Customer Loyalty Program Settings</h1>
 			{sections.map((section, index) => (
 				<Section key={index} section={section} />
