@@ -2,6 +2,7 @@ import {Outlet} from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
 
 export default function Root() {
+
 	return (
 		<div className={'pb-4'}>
 			<div id={'header-container'}>

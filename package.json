@@ -7,10 +7,14 @@
     "dev": "vite",
     "host": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "screenshots": "npx tsx screenshotter/screenshotter"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.4.5",
+    "puppeteer": "^22.11.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",

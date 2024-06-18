@@ -1,7 +1,44 @@
 @import "bootstrap/scss/bootstrap";
 
-html, body {
-  height: 100%;
+body {
+  .fake-browser {
+    border: none;
+    box-shadow: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  &:not(.screenshotting) {
+    .window-name, .browser-bar, .screenshot-description {
+      display: none;
+    }
+  }
+
+  &.screenshotting {
+    background: url(https://i.imgur.com/HL7a4up.png) top left;
+    background-size: cover;
+
+    .screenshot-description {
+      display: block;
+      position: relative;
+      z-index: 999999;
+    }
+
+    .fake-browser {
+      flex-direction: column;
+      overflow: hidden;
+      margin: 10px;
+      display: flex;
+      box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .browser-viewport {
+      background: white;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
 }
 
 .fs-sm {
@@ -19,4 +56,82 @@ a:not(.btn) {
 .breadcrumb-item,
 .breadcrumb-item a {
   color: #666;
+}
+
+.screenshot-description {
+  background: rgba(33, 33, 33, 0.9);
+  color: whitesmoke;
+  padding: 0.75em 1em 0.75em;
+  font-family: monospace;
+}
+
+.screenshot-description p  {
+  margin-bottom: 0px;
+}
+
+
+.window-name {
+  background: url(/firefox.png) no-repeat darkblue;
+  background-position: 3px center;
+  background-size: auto 86%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+}
+
+.browser-bar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  position: relative;
+}
+
+.browser-bar-history {
+  margin-right: 5px;
+  color: #666666;
+}
+
+.browser-bar input {
+  flex-grow: 1;
+  height: 80%;
+  border: 1px solid #999;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 10px 0 32px;
+  font-size: 16px;
+  margin: 0 10px 0 10px;
+}
+
+.browser-bar .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.browser-bar .lock-icon {
+  width: 16px;
+  height: 16px;
+  background: url('https://img.icons8.com/ios-filled/50/000000/lock.png') no-repeat center;
+  background-size: contain;
+  margin-right: 10px;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+}
+
+.browser-bar .refresh-icon {
+  width: 20px;
+  height: 20px;
+  background: url('https://img.icons8.com/ios-glyphs/30/000000/refresh.png') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
 }

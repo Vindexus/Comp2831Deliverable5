@@ -4,6 +4,8 @@ import './OrderNew.css'
 import Modal from "../components/Modal";
 import Form from "../components/forms/Form";
 import {useSetBreadcrumbs} from "../lib/store";
+import {pppSection} from "../lib/css";
+import {useSearchParams} from "react-router-dom";
 
 type PizzaOption = {
 	name: string,
@@ -12,8 +14,9 @@ type PizzaOption = {
 }
 
 export default function OrderNew () {
+	const [searchParams] = useSearchParams()
 	useSetBreadcrumbs(['Order #425'])
-	const [showModal, setShowModal] = useState(true)
+	const [showModal, setShowModal] = useState(searchParams.has('modal'))
 	const pizzas : PizzaOption[] = [
 		{
 			name: 'Margherita',
@@ -37,7 +40,7 @@ export default function OrderNew () {
 		}
 	]
 
-	return <div>
+	return <div className={pppSection}>
 		<h1>New Order</h1>
 		<Form submitLabel={'View Order'}>
 			<Extender defaultShow={false} title={'Appetizers & Salads'} />

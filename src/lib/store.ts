@@ -10,7 +10,7 @@ export const useAppStore = create<AppStore>((set) => ({
 	breadcrumbs: [],
 	setBreadcrumbs: (crumbs: string[]) => set(() => ({
 		breadcrumbs: crumbs
-	}))
+	})),
 }))
 
 
