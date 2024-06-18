@@ -8,3 +8,9 @@
 4. Navigate to the project directory: `cd Comp2831Deliverable5`
 5. Install dependencies `npm i`
 6. Run the project `npm run dev`
+
+## Taking Screenshots
+1. Make sure the app is running locally
+2. Modify `screenshotter/screenshotter.ts` to list the pages and descriptions
+3. Run `npm run screenshot`
+4. The images should appear in the `screenshots` folder

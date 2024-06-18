@@ -98,8 +98,8 @@ const VIEW_PORT_HEIGHT = 1024;
 		const prefix = ('0000' + num).slice(-2)
 		const slug = prefix + '_' + dest.title.toLowerCase()
 			.replace(/\s+/g, '-')
-			.replace(/[^a-z0-9]/ig, '')
-		const basename = slug + '.jpg'
+			.replace(/[^a-z0-9\-]/ig, '')
+		const basename = slug + '.png'
 
 		const filepath = path.join(screenshotPath, basename)
 		log('Saving ' + chalk.cyanBright(basename))
@@ -121,6 +121,7 @@ const VIEW_PORT_HEIGHT = 1024;
 
 		await page.screenshot({
 			path: filepath,
+			type: 'png',
 			fullPage: true,
 		});
 		log()
