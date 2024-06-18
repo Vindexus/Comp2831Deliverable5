@@ -3,6 +3,7 @@ import React from "react";
 import Root from "./components/Root";
 import CustomerDiscountSettings from "./routes/CustomerDiscountSettings";
 import Home from "./routes/Home";
+import Register from "./routes/Register";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
 				path: "/customer-discounts",
 				element: <CustomerDiscountSettings />,
 			},
+			{
+				path: '/register',
+				element: <Register />,
+			}
 		]
 	},
 ]);

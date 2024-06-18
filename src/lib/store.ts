@@ -1,4 +1,5 @@
 import {create} from 'zustand'
+import {useEffect} from "react";
 
 interface AppStore {
 	breadcrumbs: string[]
@@ -11,3 +12,11 @@ export const useAppStore = create<AppStore>((set) => ({
 		breadcrumbs: crumbs
 	}))
 }))
+
+
+export const useSetBreadcrumbs = (crumbs: string[]) => {
+	const set = useAppStore(state => state.setBreadcrumbs)
+	useEffect(() => {
+		set(crumbs)
+	}, [])
+}

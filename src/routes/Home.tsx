@@ -13,5 +13,8 @@ export default function Home () {
 				<button type={'button'} className={'btn btn-secondary'}>Go</button>
 			</div>
 		</div>
+		<div>
+			<Link to={'/register'}>Register new user</Link>
+		</div>
 	</div>
 }
