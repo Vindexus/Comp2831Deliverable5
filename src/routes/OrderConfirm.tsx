@@ -27,13 +27,15 @@ export default function OrderConfirm() {
 			price: 1329,
 		},
 		{
-			label: '2L of Cuke',
+			label: '2L Coke',
 			quantity: 2,
 			price: 1329,
 		},
 	]
 
 	const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0)
+	const tax = total * 0.05
+	const totalWithTax = total + tax
 
 	return <Form submitLabel={'Submit Order'}>
 		<div className={'order-summary'}>
@@ -56,8 +58,10 @@ export default function OrderConfirm() {
 				}
 				return pieces
 			})}
-			<div className={'fs-3'}>
-				<span className={'text-secondary fs-5'}>Total:</span> <span className={'fw-bold'}>{formatCents(total)}</span>
+			<div className={'fs-5'}>
+				<div className={'order-totals'}><span className={'text-secondary fs-6'}>Items Total:</span> <span className={'fw-normal fs-6'}>{formatCents(total)}</span></div>
+				<div className={'order-totals'}><span className={'text-secondary fs-6'}>Tax:</span> <span className={'fw-normal fs-6'}>{formatCents(tax)}</span></div>
+				<div className={'order-totals'}><span className={'text-secondary fs-4'}>Total:</span> <span className={'fw-bold'}>{formatCents(totalWithTax)}</span></div>
 			</div>
 		</div>
 	</Form>
