@@ -8,6 +8,9 @@ import OrderNew from "./routes/OrderNew";
 import OrderConfirm from "./routes/OrderConfirm";
 import LoginPage from "./routes/Login";
 import {useAppStore} from "./lib/store";
+import BusyTimesReport from "./routes/BusyTimesReport";
+import PayrollReport from "./routes/PayrollReport";
+import CustomerDiscountsChangeLog from "./routes/CustomerDiscountsChangeLog";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -22,6 +25,10 @@ const router = createBrowserRouter([
 				element: <CustomerDiscountSettings />,
 			},
 			{
+				path: "/customer-discounts-log",
+				element: <CustomerDiscountsChangeLog />,
+			},
+			{
 				path: '/register',
 				element: <Register />,
 			},
@@ -32,6 +39,14 @@ const router = createBrowserRouter([
 			{
 				path: '/confirm-order',
 				element: <OrderConfirm />
+			},
+			{
+				path: '/reports/busy-times',
+				element: <BusyTimesReport />
+			},
+			{
+				path: '/reports/payroll',
+				element: <PayrollReport />
 			},
 		]
 	},

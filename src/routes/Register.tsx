@@ -4,12 +4,16 @@ import React, {useState} from "react";
 import RadioFormGroup from "../components/forms/RadioFormGroup";
 import Form from "../components/forms/Form";
 import Modal from "../components/Modal";
+import {pppSection} from "../lib/css";
+import {useSearchParams} from "react-router-dom";
 
 export default function Register () {
-	const [showModal, setShowModal] = useState(true)
+	const [sp] = useSearchParams()
+	const [showModal, setShowModal] = useState(sp.has('success'))
+	const hasErrors = sp.has('errors')
 	useSetBreadcrumbs(['New Customer'])
 
-	return <div className={''}>
+	return <div className={pppSection}>
 		<h1>New Customer Registration</h1>
 		<Form onSubmit={() => {
 			setShowModal(true)
@@ -18,10 +22,10 @@ export default function Register () {
 		>
 			<div className={'row mb-2'}>
 				<div className={'col-md-6'}>
-					<InputFormGroup label={'First Name'}/>
+					<InputFormGroup label={'First Name'} value={hasErrors ? 'Jane' : ''} />
 				</div>
 				<div className={'col-md-6'}>
-					<InputFormGroup label={'Last Name'}/>
+					<InputFormGroup label={'Last Name'} value={hasErrors ? 'Doe' : ''} />
 				</div>
 			</div>
 			<div className={'row mb-2'}>
@@ -34,13 +38,13 @@ export default function Register () {
 			</div>
 			<InputFormGroup
 				label={'Email'}
-				/*value='janedoe'
-				error={'Please enter a valid email'}*/
+				value={hasErrors ? 'janedoe' : ''}
+				error={hasErrors ? 'Please enter a valid email' : ''}
 			/>
 			<RadioFormGroup
 				label={'Would you like to receive promotional materials?'}
 				options={['Yes', 'No']}
-				/*error={'You must select one of these options'}*/
+				error={hasErrors ? 'You must select one of these options' : ''}
 			/>
 		</Form>
 		<Modal

@@ -2,6 +2,7 @@ import React, {ReactNode} from "react";
 import {pppSection} from "../lib/css";
 import './Home.css'
 import {useSearchParams} from "react-router-dom";
+import {useSetBreadcrumbs} from "../lib/store";
 
 type ReportKey = 'daily-sales' | 'payroll' | 'profit-loss' | 'popular-times'
 
@@ -68,6 +69,7 @@ const reports : Report[] = [
 
 export default function Home() {
 	let [searchParams] = useSearchParams();
+	useSetBreadcrumbs([])
 
 	let data : PageData
 

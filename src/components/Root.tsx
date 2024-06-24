@@ -18,11 +18,7 @@ export default function Root() {
 					</div>
 				</header>
 			</div>
-			<div className={'bg-secondary-subtle'}>
-				<div className={'col-md-8 container mx-auto px-2 py-1'}>
-					<Breadcrumbs/>
-				</div>
-			</div>
+			<Breadcrumbs />
 			<Outlet/>
 		</div>
 	);

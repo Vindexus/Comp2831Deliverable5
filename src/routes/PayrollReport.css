@@ -1,0 +1,9 @@
+.summary .table {
+	td, th {
+		background: transparent;
+	}
+}
+
+th.ytd, th.current {
+	width: 140px;
+}

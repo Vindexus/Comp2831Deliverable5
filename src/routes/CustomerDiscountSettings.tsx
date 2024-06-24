@@ -2,6 +2,7 @@ import React, {ReactNode, useEffect} from "react";
 import {useAppStore} from "../lib/store";
 import Pagination from "../components/Pagination";
 import {pppSection} from "../lib/css";
+import {Link} from "react-router-dom";
 
 function Section ({section}: {section: Section}) {
 	const {title, enabled, discount, changed, children} = section
@@ -96,47 +97,12 @@ export default function CustomerDiscountSettings () {
 	return (
 		<div className={pppSection}>
 			<h1>Customer Loyalty Program Settings</h1>
+			<div className={'mb-2'}>
+				<Link to={'/customer-discounts-log'}>View Changelog History</Link>
+			</div>
 			{sections.map((section, index) => (
 				<Section key={index} section={section} />
 			))}
-			<hr />
-			<div className={'card'}>
-				<div className={'card-body'}>
-					<h3 className={'card-title'}>Changelog History</h3>
-					<div className={'change-item'}>
-						<div>
-							<strong>John Smith</strong> updated the <strong>New Customer Discount</strong> settings
-							<small className={'ms-2 text-secondary'}>Jun 4th 2022, 8:46pm PST</small>
-						</div>
-						<div className={'p-2'}>
-							Changed from disabled to <strong>enabled</strong>
-							<br/>Discount changed from <span
-							className={'text-decoration-line-through'}>8%</span> to <strong>10%</strong>
-						</div>
-					</div>
-					<div className={'change-item'}>
-						<div>
-							<strong>John Smith</strong> updated the <strong>New Customer Discount</strong> settings
-							<small className={'ms-2 text-secondary'}>Mar 3rd 2022, 2:46pm PST</small>
-						</div>
-						<div className={'p-2'}>
-							Changed from enabled to <strong>disabled</strong>
-						</div>
-					</div>
-					<div className={'change-item'}>
-						<div>
-							<strong>Teresa Williams</strong> updated the <strong>Weekday Discount</strong> settings
-							<small className={'ms-2 text-secondary'}>Feb 27th 2022, 1:42am PST</small>
-						</div>
-						<div className={'p-2'}>
-							Discount changed from <span className={'text-decoration-line-through'}>20%</span> to <strong>5%</strong>
-							<br/>Removed <span className={'text-decoration-line-through'}>Thursday</span>
-							<br/>Added <strong>Monday</strong>
-						</div>
-					</div>
-					<Pagination />
-				</div>
-			</div>
 		</div>
 	);
 }

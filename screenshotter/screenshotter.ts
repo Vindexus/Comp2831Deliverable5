@@ -28,9 +28,29 @@ const destinations : Destination[] = [
 		description: 'Home page as viewed by a user who is a server',
 	},
 	{
+		url: '/register',
+		title: 'Create Customer Account',
+		description: 'Page for employees to register a customer in person or over the phone',
+	},
+	{
+		url: '/register?errors=1',
+		title: 'Customer Validation',
+		description: 'Showing validation errors on customer creation form',
+	},
+	{
+		url: '/register?success=1',
+		title: 'Successfully Created Customer',
+		description: 'Message shows success and directs back to the home page.',
+	},
+	{
 		url: '/customer-discounts',
 		title: 'Customer Loyalty Discount Program Settings',
-		description: 'Adjust all the settings for the CLDP. A list of changes is shown below.',
+		description: 'Adjust all the settings for the CLDP.',
+	},
+	{
+		url: '/customer-discounts-log',
+		title: 'CLDP Change Log',
+		description: 'Shows a lit of all changes to the settings and who made them.',
 	},
 	{
 		url: '/new-order',
@@ -40,13 +60,29 @@ const destinations : Destination[] = [
 	{
 		url: '/new-order?modal=1',
 		title: 'Create New Order: Notes Window',
-		description: 'Window for modifing the notes for an item in an order.',
+		description: 'Window for modifying the notes for an item in an order.',
 	},
 	{
 		url: '/confirm-order',
 		title: 'Confirm Order',
 		description: 'Review an order\'s details before finalizing it.',
-	}
+	},
+	{
+		url: '/reports/busy-times',
+		title: 'Report of Busiest Times',
+		description: 'Graph view shows peak ordering times for given period.'
+	},
+	{
+		url: '/reports/payroll?employees=1',
+		title: 'Payroll Report for Business Owner',
+		description: 'Shows dropdown for selecting employee.'
+	},
+	{
+		url: '/reports/payroll',
+		title: 'Payroll Report for Employee',
+		description: 'Shows payroll report for logged in employee'
+	},
+
 ];
 
 const VIEW_PORT_WIDTH = 1080;

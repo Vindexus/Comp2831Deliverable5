@@ -135,3 +135,12 @@ a:not(.btn) {
   background-size: contain;
   cursor: pointer;
 }
+
+img.white-triangle {
+  width: 20px;
+  transform: rotate(180deg);
+}
+
+.bg-secondary-subtleish {
+  background: var(--bs-gray-500);
+}
