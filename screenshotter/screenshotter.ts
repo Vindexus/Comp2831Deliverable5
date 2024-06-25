@@ -69,7 +69,7 @@ const destinations : Destination[] = [
 	},
 	{
 		url: '/reports/busy-times',
-		title: 'Report of Busiest Times',
+		title: 'Busiest Times Report',
 		description: 'Graph view shows peak ordering times for given period.'
 	},
 	{

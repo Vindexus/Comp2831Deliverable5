@@ -24,7 +24,7 @@ function Selector (props: SelectorProps) {
 }
 
 export default function BusyTimesReport () {
-	useSetBreadcrumbs(['Reports', 'Busy Times Report'])
+	useSetBreadcrumbs(['Reports', 'Busiest Times Report'])
 
 	return <div className={pppSection}>
 		<h1>Busiest Times Report</h1>
