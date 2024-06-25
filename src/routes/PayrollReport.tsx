@@ -14,7 +14,7 @@ function textToRowCells (text: string) : string[][] {
 export default function PayrollReport () {
 	useSetBreadcrumbs(['Reports', 'Payroll Report'])
 	const [sp] = useSearchParams()
-	const showEmployees = sp.has('employees')
+	const asAdmin = sp.has('asadmin')
 
 	const payText = `Regular Pay|61.48|$35.24|$2,154.38|$15,840.68
 Vacation Pay|-|-|$87.56|$593.20
@@ -28,11 +28,11 @@ Canada Pension Plan|$108.75|$712.77`
 
 	return <div className={'col-md-6 mx-auto'}>
 		<div className={pppSection + ' text-center fs-2 fw-bold'}>
-			Welcome, {showEmployees ? 'Paulo' : 'Sophie Klassen'}!
+			Welcome, {asAdmin ? 'Paulo' : 'Sophie Klassen'}!
 		</div>
 		<h1>Payroll Report</h1>
 		<div className={'row'}>
-			{showEmployees && <div className={'col-md-6'}>
+			{asAdmin && <div className={'col-md-6'}>
 				<FormGroup label={'Employee'}>
 					<select className={'form-control'}>
 						<option>Sophie Klassen</option>
@@ -40,7 +40,7 @@ Canada Pension Plan|$108.75|$712.77`
 					</select>
 				</FormGroup>
 			</div>}
-			<div className={'col-md-6' + (showEmployees ? '' : ' offset-3')}>
+			<div className={'col-md-6' + (asAdmin ? '' : ' offset-3')}>
 				<FormGroup label={'Payroll End Cycle Report'}>
 					<select className={'form-control'}>
 						<option>6/11/2024</option>
@@ -51,6 +51,10 @@ Canada Pension Plan|$108.75|$712.77`
 		<div className={'col-md-10 mx-auto bg-secondary-subtle p-2 mt-4 mb-4 fw-bold'}>
 			Pay Cycle: 5/29/2024 - 6/11/2024
 		</div>
+		{asAdmin && <div className={'d-flex justify-content-center mb-4'}>
+			<button type={'button'} className={'btn btn-secondary mx-4'}>Edit</button>
+			<button type={'button'} className={'btn btn-secondary mx-4'}>Save</button>
+		</div>}
 		<div className={'rounded border-black border p-4 border-2'}>
 			<div className={'d-flex justify-content-between fw-bold'}>
 				<div>

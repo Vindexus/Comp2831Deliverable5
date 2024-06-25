@@ -73,7 +73,7 @@ const destinations : Destination[] = [
 		description: 'Graph view shows peak ordering times for given period.'
 	},
 	{
-		url: '/reports/payroll?employees=1',
+		url: '/reports/payroll?asadmin=1',
 		title: 'Payroll Report for Business Owner',
 		description: 'Shows dropdown for selecting employee.'
 	},
