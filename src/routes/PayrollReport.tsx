@@ -27,7 +27,7 @@ Canada Pension Plan|$108.75|$712.77`
 	const taxRows = textToRowCells(taxText)
 
 	return <div className={'col-md-6 mx-auto'}>
-		<div className={pppSection + ' text-center fs-2 fw-bold'}>
+		<div className={pppSection + ' text-center fs-2 fw-bold text-nowrap'}>
 			Welcome, {asAdmin ? 'Paulo' : 'Sophie Klassen'}!
 		</div>
 		<h1>Payroll Report</h1>

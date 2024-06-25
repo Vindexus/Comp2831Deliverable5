@@ -27,7 +27,7 @@ export default function BusyTimesReport () {
 	useSetBreadcrumbs(['Reports', 'Busy Times Report'])
 
 	return <div className={pppSection}>
-		<h1>Most Popular Times Report</h1>
+		<h1>Busiest Times Report</h1>
 		<div className={'row'}>
 			<Selector title={'Baseline Date Period'} activeOptionIdx={0} options={[
 				'6/11/2024',

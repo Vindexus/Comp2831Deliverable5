@@ -62,7 +62,7 @@ const reports : Report[] = [
 						fill="#454545"/>
 		</svg>,
 		key: 'popular-times',
-		title: 'Most Popular Times Report',
+		title: 'Busiest Times Report',
 		description: 'Which weekdays and which hours are the busiest.',
 	},
 ]
